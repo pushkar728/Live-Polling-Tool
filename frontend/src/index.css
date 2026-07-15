@@ -1,0 +1,172 @@
+:root {
+  --ink: #14161f;
+  --ink-raised: #1b1e2b;
+  --ink-border: #2a2e40;
+  --bone: #f6f3ec;
+  --bone-dim: #c9c6bd;
+  --signal: #3ecf8e;
+  --signal-dim: #2a9e6c;
+  --violet: #8b7fd6;
+  --coral: #e8604c;
+
+  --font-display: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+
+  --radius: 10px;
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--ink);
+  color: var(--bone);
+  font-family: var(--font-display);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--signal);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 15px;
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.12s ease, opacity 0.12s ease;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-primary {
+  background: var(--signal);
+  color: #0a1510;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--signal-dim);
+}
+
+.btn-ghost {
+  background: transparent;
+  border-color: var(--ink-border);
+  color: var(--bone);
+}
+
+.btn-ghost:hover:not(:disabled) {
+  border-color: var(--bone-dim);
+}
+
+.btn-danger {
+  background: transparent;
+  border-color: var(--coral);
+  color: var(--coral);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: rgba(232, 96, 76, 0.1);
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 13px;
+  color: var(--bone-dim);
+  letter-spacing: 0.02em;
+}
+
+.field input,
+.field textarea {
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-border);
+  border-radius: var(--radius);
+  color: var(--bone);
+  padding: 12px 14px;
+  font-size: 15px;
+}
+
+.field input:focus,
+.field textarea:focus {
+  border-color: var(--signal);
+}
+
+.card {
+  background: var(--ink-raised);
+  border: 1px solid var(--ink-border);
+  border-radius: 14px;
+  padding: 28px;
+}
+
+.error-banner {
+  background: rgba(232, 96, 76, 0.12);
+  border: 1px solid rgba(232, 96, 76, 0.4);
+  color: #f3a99a;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.mono {
+  font-family: var(--font-mono);
+}
