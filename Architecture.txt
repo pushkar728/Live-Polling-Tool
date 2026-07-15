@@ -1,8 +1,6 @@
-Plan (6 steps):
-
 1. Project scaffolding (folders, Go module, React app init)
 2. Backend: MongoDB + Redis connections, data models
 3. Backend: Auth (signup/login with JWT)
 4. Backend: Poll CRUD + voting + WebSocket for live updates (this is where Redis actually earns its keep)
 5. Frontend: React app (create poll, share link, vote, live results page)
-6. Deployment (I'll walk you through free-tier options for Go backend + MongoDB Atlas + Redis + frontend hosting)
+6. Deployment
